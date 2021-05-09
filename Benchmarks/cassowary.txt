@@ -1,0 +1,49 @@
+cassowary run  -u http://127.0.0.1:3000/  -c 10 -n 100
+10 concurrent users, 100 requests
+
+Result:
+
+Starting Load Test with 100 requests using 10 concurrent users
+
+ 100% |████████████████████████████████████████| [0s:0s]            15.765ms
+
+
+ TCP Connect.....................: Avg/mean=0.50ms      Median=0.50ms   p(95)=1.00ms
+ Server Processing...............: Avg/mean=0.44ms      Median=0.00ms   p(95)=2.00ms
+ Content Transfer................: Avg/mean=0.03ms      Median=0.00ms   p(95)=0.00ms
+
+Summary:
+ Total Req.......................: 100
+ Failed Req......................: 0
+ DNS Lookup......................: 0.00ms
+ Req/s...........................: 6343.17
+
+==================================
+USAGE:
+   cassowary run [command options] [arguments...]
+
+OPTIONS:
+   -u value, --url value            the url (absoluteURI) to be used
+   -c value, --concurrency value    number of concurrent users (default: 1)
+   -n value, --requests value       number of requests to perform (default: 1)
+   -f FILE, --file FILE             file-slurp mode: specify FILE path, local or www, containing the url suffixes
+   -d value, --duration value       set the duration in seconds of the load test (example: do 100 requests in a duration of 30s)
+   -t value, --timeout value        http client timeout (default: 5)
+   -p value, --prompushgwurl value  specify prometheus push gateway url to send metrics (optional)
+   -H value, --header value         add arbitrary header, eg. 'Host: www.example.com'
+   -C, --cloudwatch                 enable to send metrics to AWS Cloudwatch (default: false)
+   -F, --json-metrics               outputs metrics to a json file by setting flag to true (default: false)
+   -b, --boxplot                    enable to generate a boxplot as png (default: false)
+   --histogram                      enable to generate a histogram as png (default: false)
+   --postfile value                 file containing data to POST (content type will default to application/json)
+   --patchfile value                file containing data to PATCH (content type will default to application/json)
+   --putfile value                  file containing data to PUT (content type will default to application/json)
+   --json-metrics-file value        outputs metrics to a custom json filepath, if json-metrics is set to true
+   --disable-keep-alive             use this flag to disable http keep-alive (default: false)
+   --ca value                       ca certificate to verify peer against
+   --cert value                     client authentication certificate
+   --key value                      client authentication key
+   --help, -h                       show help (default: false)
+==================================
+
+https://github.com/rogerwelin/cassowary

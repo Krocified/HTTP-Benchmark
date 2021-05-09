@@ -1,0 +1,58 @@
+sniper -c 10 -n 100 http://127.0.0.1:3000/
+10 Concurrent Users, 100 requests
+
+Result:
+This is Sniper ,version 1.0
+Copyright (C) 2013 by btfak.com, et al.
+This is free software; open source on github.com/btfak/sniper.
+
+The server is now under snipe ...
+
+Completed 10 requests
+Completed 20 requests
+Completed 30 requests
+Completed 40 requests
+Completed 50 requests
+Completed 60 requests
+Completed 70 requests
+Completed 80 requests
+Completed 90 requests
+Completed 100 requests
+Transactions:                   101 hits
+Availability:                   99.01 %
+Elapsed time:                   0.03 secs
+Document length:               147 Bytes
+TotalTransfer:                  0.01 MB
+Transaction rate:            3378.22 trans/sec
+Throughput:                     0.47 MB/sec
+Successful:                     100 hits
+Failed:                           1 hits
+TransactionTime:               2.730 ms(mean)
+ConnectionTime:                0.209 ms(mean)
+ProcessTime:                   2.521 ms(mean)
+StateCode:                    100(code 200)
+
+==========================================
+Usage:
+   sniper [options] http[s]://hostname[:port][/path]                 http or https，ip or domain support
+   sniper [options] -f urls.txt                                      multi-target，format：each url per line
+Options:
+   -c, --concurrent     concurrent users, default is 1.              
+   -n, --requests       number of requests to perform.               
+   -r, --repetitions    number of times to run the test.             
+   -t, --time           testing time, 30 mean 30 seconds.            
+   -R, --sniperc        specify an sniperc file to get config        
+                        (default is $HOME/.sniperc).               
+   -f, --urlfile        select a specific URLS file.                 
+   -p, --post           select a specific file to POST.              
+   -T, --content-type   set Content-Type in request                  
+                        (default is text/plain).
+   -V, --Version        print the version number.                    
+   -h, --help           print this section.                          
+   -C, --config         show the current config.                     
+   -s, --plot           plot detail transactions' info               
+                        (true | false,default set true,              
+                        notice: set -t will not plot anyhow).
+
+==========================================
+https://github.com/btfak/sniper

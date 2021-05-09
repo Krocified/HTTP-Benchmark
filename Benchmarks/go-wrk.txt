@@ -1,0 +1,53 @@
+go-wrk  -c 80  -d 5  http://127.0.0.1:3000/index.js
+
+1=============================
+Goroutines = 80, Duration = 5s
+Result:
+Running 5s test @ http://127.0.0.1:3000/index.js
+  80 goroutine(s) running concurrently
+80540 requests in 4.993492997s, 10.37MB read
+Requests/sec:           16128.99
+Transfer/sec:           2.08MB
+Avg Req Time:           4.960012ms
+Fastest Request:        0s
+Slowest Request:        56.892ms
+Number of Errors:       0
+
+go-wrk  -c 400  -d 10  http://127.0.0.1:3000/index.js
+
+2=============================
+Goroutines = 400, Duration = 10s
+Result: 
+Running 10s test @ http://127.0.0.1:3000/index.js
+  400 goroutine(s) running concurrently
+159559 requests in 10.008515124s, 20.54MB read
+Requests/sec:           15942.32
+Transfer/sec:           2.05MB
+Avg Req Time:           25.090443ms
+Fastest Request:        0s
+Slowest Request:        250.8177ms
+Number of Errors:       0
+
+Parameters =====================================
+Usage: go-wrk <options> <url>
+   Options:
+    -H 	 header line, joined with ';' (Default )
+    -M 	 HTTP method (Default GET)
+    -T 	 Socket/request timeout in ms (Default 1000)
+    -body 	 request body string or @filename (Default )
+    -c 	 Number of goroutines to use (concurrent connections) (Default 10)
+    -ca 	 CA file to verify peer against (SSL/TLS) (Default )
+    -cert 	 CA certificate file to verify peer against (SSL/TLS) (Default )
+    -d 	 Duration of test in seconds (Default 10)
+    -f 	 Playback file name (Default <empty>)
+    -help 	 Print help (Default false)
+    -host 	 Host Header (Default )
+    -http 	 Use HTTP/2 (Default true)
+    -key 	 Private key file name (SSL/TLS (Default )
+    -no-c 	 Disable Compression - Prevents sending the "Accept-Encoding: gzip" header (Default false)
+    -no-ka 	 Disable KeepAlive - prevents re-use of TCP connections between different HTTP requests (Default false)
+    -redir 	 Allow Redirects (Default false)
+    -v 	 Print version details (Default false)
+======================================
+
+https://github.com/tsliwowicz/go-wrk
